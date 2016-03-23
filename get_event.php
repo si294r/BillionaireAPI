@@ -2,9 +2,16 @@
 
 $start_time = microtime(true);
 
-$device = isset($_GET['device']) ? $_GET['device'] : "";
-$version = isset($_GET['version']) ? $_GET['version'] : "";
-$debug = isset($_GET['debug']) ? $_GET['debug'] : "0";
+$query_string = isset($_SERVER["QUERY_STRING"]) ? $_SERVER["QUERY_STRING"] : "";
+$params = explode("/", $query_string);
+
+$device     = isset($params[0]) ? $params[0] : "";
+$version    = isset($params[1]) ? $params[1] : "";
+$debug      = isset($params[2]) ? $params[2] : "";
+
+//$device = isset($_GET['device']) ? $_GET['device'] : "";
+//$version = isset($_GET['version']) ? $_GET['version'] : "";
+//$debug = isset($_GET['debug']) ? $_GET['debug'] : "0";
 
 $db_host = 'localhost';
 $db_user = 'root';
