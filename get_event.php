@@ -19,7 +19,7 @@ $db_pass = 'password';
 $db_name = 'Billionaire_prod';
 $tbl_event = 'event';
 
-$json['current_time'] = date('Y-m-d H:i:s');
+$json['current_time'] = gmdate('Y-m-d H:i:s');
 $json['device'] = $device;
 $json['version'] = $version;
 $json['exception'] = "";
